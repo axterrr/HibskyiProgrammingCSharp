@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="KMA.ProgrammingCSharp.HibskyiPractice2.Views.ShowDataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Margin="20,20,0,0" FontSize="14" Text="{Binding FirstName, Mode=OneWay, StringFormat=Your first name: {0}}"></TextBlock>
+        <TextBlock Grid.Row="1" Margin="20,0,0,0"  FontSize="14" Text="{Binding LastName, Mode=OneWay, StringFormat=Your last name: {0}}"></TextBlock>
+        <TextBlock Grid.Row="2" Margin="20,0,0,0"  FontSize="14" Text="{Binding Email, Mode=OneWay, StringFormat=Your email: {0}}"></TextBlock>
+        <TextBlock Grid.Row="3" Margin="20,0,0,0"  FontSize="14" Text="{Binding DateOfBirth, Mode=OneWay, StringFormat=Your date of birth: {0}}"></TextBlock>
+        <TextBlock Grid.Row="4" Margin="20,0,0,0"  FontSize="14" Text="{Binding IsAdult, Mode=OneWay, StringFormat=Adult: {0}}"></TextBlock>
+        <TextBlock Grid.Row="5" Margin="20,0,0,0"  FontSize="14" Text="{Binding SunSign, Mode=OneWay, StringFormat=Western zodiac sign: {0}}"></TextBlock>
+        <TextBlock Grid.Row="6" Margin="20,0,0,0"  FontSize="14" Text="{Binding ChineseSign, Mode=OneWay, StringFormat=Chinese zodiac sign: {0}}"></TextBlock>
+        <TextBlock Grid.Row="7" Margin="20,0,0,0"  FontSize="14" Text="{Binding IsBirthday, Mode=OneWay, StringFormat=Today is birthday: {0}}"></TextBlock>
+        <Button Grid.Row="8" Content="Go Back" HorizontalAlignment="Center" Margin="0,20,0,0" Width="200" Height="30" Command="{Binding GoToEnterDataCommand}"></Button>
+    </Grid>
+</UserControl>

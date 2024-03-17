@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HibskyiPractice1", "HibskyiPractice1\HibskyiPractice1.csproj", "{42679999-5752-4322-9A1E-49BC8C0CAF3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HibskyiPractice1", "HibskyiPractice1\HibskyiPractice1.csproj", "{42679999-5752-4322-9A1E-49BC8C0CAF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HibskyiPractice2", "HibskyiPractice2\HibskyiPractice2.csproj", "{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{42679999-5752-4322-9A1E-49BC8C0CAF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42679999-5752-4322-9A1E-49BC8C0CAF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42679999-5752-4322-9A1E-49BC8C0CAF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
