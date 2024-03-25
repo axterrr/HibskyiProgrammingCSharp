@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HibskyiPractice1", "HibskyiPractice1\HibskyiPractice1.csproj", "{42679999-5752-4322-9A1E-49BC8C0CAF3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HibskyiPractice2", "HibskyiPractice2\HibskyiPractice2.csproj", "{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HibskyiPractice2", "HibskyiPractice2\HibskyiPractice2.csproj", "{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HibskyiPractice4", "HibskyiPractice4\HibskyiPractice4.csproj", "{9FB15E7E-4550-4DAB-9494-10035C259EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA5ECF86-7D5B-4071-A78D-CC588D8A3C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB15E7E-4550-4DAB-9494-10035C259EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB15E7E-4550-4DAB-9494-10035C259EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB15E7E-4550-4DAB-9494-10035C259EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB15E7E-4550-4DAB-9494-10035C259EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
