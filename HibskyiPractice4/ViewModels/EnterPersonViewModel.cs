@@ -124,7 +124,7 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.ViewModels
                 LoaderManager.Instance.HideLoader();
             }
 
-            ApplicationManager.CurrentPersonList = new ObservableCollection<Person>(personService.GetAllPersons());
+            new PersonListService().UpdatePersonList();
             _goToPersonList.Invoke();
         }
 

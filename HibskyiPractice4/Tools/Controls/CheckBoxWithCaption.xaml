@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="KMA.ProgrammingCSharp.HibskyiPractice4.Tools.Controls.CheckBoxWithCaption"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KMA.ProgrammingCSharp.HibskyiPractice4.Tools.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="500" x:Name="checkBoxWithCaption">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="TbCaption" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,5,5,10" Text="Caption" FontSize="14" Foreground="Gray"/>
+        <CheckBox IsThreeState="True" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,20,7" IsChecked="{Binding ElementName=checkBoxWithCaption, Path=IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>

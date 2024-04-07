@@ -9,6 +9,7 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Navigation
     enum MainNavigationTypes
     {
         EnterPerson,
-        PersonList
+        PersonList,
+        Filtration
     }
 }

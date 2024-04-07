@@ -46,8 +46,10 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.ViewModels
             {
                 case MainNavigationTypes.EnterPerson:
                     return new EnterPersonViewModel(() => Navigate(MainNavigationTypes.PersonList));
+                case MainNavigationTypes.Filtration:
+                    return new FiltrationViewModel(() => Navigate(MainNavigationTypes.PersonList));
                 case MainNavigationTypes.PersonList:
-                    return new PersonListViewModel(() => Navigate(MainNavigationTypes.EnterPerson));
+                    return new PersonListViewModel(() => Navigate(MainNavigationTypes.EnterPerson), () => Navigate(MainNavigationTypes.Filtration));
                 default:
                     return null;
             }

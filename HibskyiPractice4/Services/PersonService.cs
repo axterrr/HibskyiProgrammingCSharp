@@ -33,8 +33,9 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Services
             return res;
         }
 
-        public void DeletePerson(Person person)
+        public async Task DeletePerson(Person person)
         {
+            Thread.Sleep(1000);
             Repository.Delete(person.Guid);
         }
     }

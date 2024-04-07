@@ -38,7 +38,6 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Navigation
             if (viewModel == null)
                 return;
 
-            _viewModels.Add(viewModel);
             CurrentViewModel = viewModel;
         }
 
@@ -49,7 +48,9 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Navigation
             if (viewModel != null)
                 return viewModel;
 
-            return CreateViewModel(type);
+            viewModel = CreateViewModel(type);
+            _viewModels.Add(viewModel);
+            return viewModel;
         }
 
         protected abstract INavigatable<TObject> CreateViewModel(TObject type);

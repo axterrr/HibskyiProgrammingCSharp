@@ -7,13 +7,16 @@
         xmlns:viewModels="clr-namespace:KMA.ProgrammingCSharp.HibskyiPractice4.ViewModels"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="PersonList" Height="500" Width="1000">
+        Title="PersonList" Height="800" Width="1200">
     <Window.Resources>
         <DataTemplate DataType="{ x:Type viewModels:EnterPersonViewModel}">
             <views:EnterPersonView></views:EnterPersonView>
         </DataTemplate>
         <DataTemplate DataType="{ x:Type viewModels:PersonListViewModel}">
             <views:PersonListView></views:PersonListView>
+        </DataTemplate>
+        <DataTemplate DataType="{ x:Type viewModels:FiltrationViewModel}">
+            <views:FiltrationViewModel></views:FiltrationViewModel>
         </DataTemplate>
     </Window.Resources>
     <Grid>

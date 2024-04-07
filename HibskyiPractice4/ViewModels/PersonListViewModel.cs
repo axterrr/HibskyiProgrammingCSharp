@@ -20,24 +20,23 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.ViewModels
         private RelayCommand<object> _addPersonCommand;
         private RelayCommand<object> _deletePersonCommand;
         private RelayCommand<object> _editPersonCommand;
+        private RelayCommand<object> _goToFiltrationCommand;
         private Action _goToEnterPerson;
+        private Action _goToFiltration;
+        private readonly PersonListService ListService = new();
 
-        public PersonListViewModel(Action goToEnterPerson)
+        public PersonListViewModel(Action goToEnterPerson, Action goToFiltration)
         {
+            ListService.UpdatePersonList();
             _goToEnterPerson = goToEnterPerson;
-            ApplicationManager.CurrentPersonList = new ObservableCollection<Person>(new PersonService().GetAllPersons()); 
+            _goToFiltration = goToFiltration;
         }
 
         public ObservableCollection<Person> PersonList
         {
             get 
             {
-                return ApplicationManager.CurrentPersonList; 
-            }
-            set
-            {
-                ApplicationManager.CurrentPersonList = value;
-                OnPropertyChanged();
+                return ListService.CurrentPersonList; 
             }
         }
 
@@ -69,15 +68,26 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.ViewModels
             }
         }
 
-        private void DeletePerson(object obj)
+        public RelayCommand<object> GoToFiltrationCommand
+        {
+            get
+            {
+                return _goToFiltrationCommand ??= new RelayCommand<object>(obj => _goToFiltration.Invoke());
+            }
+        }
+
+        private async void DeletePerson(object obj)
         {
             if(obj is not Person) 
             {
                 return;
             }
             PersonService personService = new PersonService();
-            personService.DeletePerson((Person)obj);
-            PersonList = new ObservableCollection<Person>(personService.GetAllPersons());
+            LoaderManager.Instance.ShowLoader();
+            await Task.Run(() => personService.DeletePerson((Person)obj));
+            LoaderManager.Instance.HideLoader();
+            ListService.UpdatePersonList();
+            OnPropertyChanged(nameof(PersonList));
         }
 
         private void EditPerson(object obj)

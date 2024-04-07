@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="KMA.ProgrammingCSharp.HibskyiPractice4.Views.FiltrationViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:tools="clr-namespace:KMA.ProgrammingCSharp.HibskyiPractice4.Tools.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <Grid Margin="0,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <tools:TextBoxWithCaption Grid.Row="0" Caption="First Name: " Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:TextBoxWithCaption>
+        <tools:TextBoxWithCaption Grid.Row="1" Caption="Last name: " Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:TextBoxWithCaption>
+        <tools:TextBoxWithCaption Grid.Row="2" Caption="Email: " Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:TextBoxWithCaption>
+        <tools:DatePickerWithCaption Grid.Row="3" Caption="Date of Birth from: " Date="{Binding DateOfBirthFrom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:DatePickerWithCaption>
+        <tools:DatePickerWithCaption Grid.Row="4" Caption="Date of Birth to: " Date="{Binding DateOfBirthTo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:DatePickerWithCaption>
+        <tools:CheckBoxWithCaption Grid.Row="5" Caption="Adult: " IsChecked="{Binding IsAdult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:CheckBoxWithCaption>
+        <tools:TextBoxWithCaption Grid.Row="6" Caption="Sun Sign: " Text="{Binding SunSign, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:TextBoxWithCaption>
+        <tools:TextBoxWithCaption Grid.Row="7" Caption="Chinese Sign: " Text="{Binding ChineseSign, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:TextBoxWithCaption>
+        <tools:CheckBoxWithCaption Grid.Row="8" Caption="Birthday Today: " IsChecked="{Binding IsBirthday, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></tools:CheckBoxWithCaption>
+        <Grid Grid.Row="9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,5,5,10" Text="Sort by" FontSize="14" Foreground="Gray"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Height="25" Width="300" Margin="5,0,20,7" FontSize="14" SelectedIndex="{Binding SortedBy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="First Name"/>
+                <ComboBoxItem Content="Last Name"/>
+                <ComboBoxItem Content="Email"/>
+                <ComboBoxItem Content="Date of Birth"/>
+                <ComboBoxItem Content="Adult"/>
+                <ComboBoxItem Content="Sun Sign"/>
+                <ComboBoxItem Content="Chinese Sign"/>
+                <ComboBoxItem Content="Birthday Today"/>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,5,5,10" Text="In Descending Order" FontSize="14" Foreground="Gray"/>
+            <CheckBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,20,7" IsChecked="{Binding DescendingOrder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Button Grid.Row="11" Content="Reset" HorizontalAlignment="Right" VerticalAlignment="Center" Height="25" Width="300" Margin="5,0,20,7" FontSize="14" Command="{Binding ResetFilterCommand}"></Button>
+        <Button Grid.Row="12" Content="Apply" HorizontalAlignment="Center" Width="300" Height="40" Command="{Binding ApplyFilterCommand}"></Button>
+    </Grid>
+</UserControl>

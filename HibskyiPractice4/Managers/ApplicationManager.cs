@@ -11,6 +11,5 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Managers
     internal class ApplicationManager
     {
         public static EnterPerson CurrentEnterPerson { get; set; }
-        public static ObservableCollection<Person> CurrentPersonList { get; set; }
     }
 }

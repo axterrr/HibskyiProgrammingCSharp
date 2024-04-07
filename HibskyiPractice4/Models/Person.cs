@@ -16,8 +16,8 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Models
         private string? _email;
         private DateTime? _dateOfBirth;
         private bool? _isAdult;
-        private string? _sunSign;
-        private string? _chineseSign;
+        private SunSigns? _sunSign;
+        private ChineseSigns? _chineseSign;
         private bool? _isBirthday;
 
         public Person(Guid id, string firstName, string lastName, string? email, DateTime? dateOfBirth)
@@ -104,12 +104,12 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Models
             get { return _isAdult; }
         }
 
-        public string? SunSign
+        public SunSigns? SunSign
         {
             get { return _sunSign; }
         }
 
-        public string? ChineseSign
+        public ChineseSigns? ChineseSign
         {
             get { return _chineseSign; }
         }
@@ -133,48 +133,79 @@ namespace KMA.ProgrammingCSharp.HibskyiPractice4.Models
                 && dt.Month == DateTime.Today.Month);
         }
 
-        private string? CalculateSunSign(DateTime dt)
+        private static SunSigns? CalculateSunSign(DateTime dt)
         {
             int day = dt.Day;
             int month = dt.Month;
 
             return month switch
             {
-                1 => day <= 20 ? "Capricorn" : "Aquarius",
-                2 => day <= 19 ? "Aquarius" : "Pisces",
-                3 => day <= 20 ? "Pisces" : "Aries",
-                4 => day <= 20 ? "Aries" : "Taurus",
-                5 => day <= 20 ? "Taurus" : "Gemini",
-                6 => day <= 21 ? "Gemini" : "Cancer",
-                7 => day <= 22 ? "Cancer" : "Leo",
-                8 => day <= 23 ? "Leo" : "Virgo",
-                9 => day <= 22 ? "Virgo" : "Libra",
-                10 => day <= 23 ? "Libra" : "Scorpio",
-                11 => day <= 22 ? "Scorpio" : "Sagittarius",
-                12 => day <= 21 ? "Sagittarius" : "Capricorn",
+                1 => day <= 20 ? SunSigns.Capricorn : SunSigns.Aquarius,
+                2 => day <= 19 ? SunSigns.Aquarius : SunSigns.Pisces,
+                3 => day <= 20 ? SunSigns.Pisces : SunSigns.Aries,
+                4 => day <= 20 ? SunSigns.Aries : SunSigns.Taurus,
+                5 => day <= 20 ? SunSigns.Taurus : SunSigns.Gemini,
+                6 => day <= 21 ? SunSigns.Gemini : SunSigns.Cancer,
+                7 => day <= 22 ? SunSigns.Cancer : SunSigns.Leo,
+                8 => day <= 23 ? SunSigns.Leo : SunSigns.Virgo,
+                9 => day <= 22 ? SunSigns.Virgo : SunSigns.Libra,
+                10 => day <= 23 ? SunSigns.Libra : SunSigns.Scorpio,
+                11 => day <= 22 ? SunSigns.Scorpio : SunSigns.Sagittarius,
+                12 => day <= 21 ? SunSigns.Sagittarius : SunSigns.Capricorn,
                 _ => null,
             };
         }
 
-        private static string? CalculateChineseSign(DateTime dt)
+        private static ChineseSigns? CalculateChineseSign(DateTime dt)
         {
             return (dt.Year % 12) switch
             {
-                0 => "Monkey",
-                1 => "Rooster",
-                2 => "Dog",
-                3 => "Pig",
-                4 => "Rat",
-                5 => "Ox",
-                6 => "Tiger",
-                7 => "Rabbit",
-                8 => "Dragon",
-                9 => "Snake",
-                10 => "Horse",
-                11 => "Goat",
+                0 => ChineseSigns.Monkey,
+                1 => ChineseSigns.Rooster,
+                2 => ChineseSigns.Dog,
+                3 => ChineseSigns.Pig,
+                4 => ChineseSigns.Rat,
+                5 => ChineseSigns.Ox,
+                6 => ChineseSigns.Tiger,
+                7 => ChineseSigns.Rabbit,
+                8 => ChineseSigns.Dragon,
+                9 => ChineseSigns.Snake,
+                10 => ChineseSigns.Horse,
+                11 => ChineseSigns.Goat,
                 _ => null,
             };
         }
 
+        public enum SunSigns
+        {
+            Aries,
+            Taurus,
+            Gemini,
+            Cancer,
+            Leo,
+            Virgo,
+            Libra,
+            Scorpio,
+            Sagittarius,
+            Capricorn,
+            Aquarius,
+            Pisces
+        }
+
+        public enum ChineseSigns
+        {
+            Rat,
+            Ox,
+            Tiger,
+            Rabbit,
+            Dragon,
+            Snake,
+            Horse,
+            Goat,
+            Monkey,
+            Rooster,
+            Dog,
+            Pig
+        }
     }
 }
